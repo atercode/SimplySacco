@@ -1,0 +1,1 @@
+{"buildTargets":["create_migrations","createdb","docker_pull_postgres","dropdb","postgres_init","postgres_shell_login","run_migrations_down","run_migrations_up","say_hello","sqlc"],"launchTargets":[],"customConfigurationProvider":{"workspaceBrowse":{"browsePath":[],"compilerArgs":[]},"fileIndex":[]}}

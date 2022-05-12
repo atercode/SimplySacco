@@ -1,0 +1,441 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+
+# GNU Make 4.2.1
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2016 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Thu May 12 13:38:56 2022
+
+# Variables
+
+# 'override' directive
+GNUMAKEFLAGS := 
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# environment
+PAPERSIZE = a4
+# environment
+DESKTOP_SESSION = ubuntu
+# default
+.SHELLFLAGS := -c
+# environment
+XDG_SESSION_CLASS = user
+# environment
+SNAP_COMMON = /var/snap/code/common
+# environment
+XDG_SESSION_TYPE = x11
+# environment
+VSCODE_LOG_NATIVE = false
+# environment
+NVM_INC = /home/atero/.nvm/versions/node/v17.9.0/include/node
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# environment
+IM_CONFIG_PHASE = 1
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# environment
+XAUTHORITY = /run/user/1000/gdm/Xauthority
+# environment
+GDMSESSION = ubuntu
+# environment
+XMODIFIERS = @im=ibus
+# makefile
+CURDIR := /home/atero/Documents/PD/Code/GoThings/SimplySacco
+# makefile
+SHELL = /bin/sh
+# environment
+SNAP_DATA = /var/snap/code/96
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en-gb","availableLanguages":{},"_languagePackSupport":true}
+# environment
+JOURNAL_STREAM = 9:72412
+# environment
+XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
+# environment
+SNAP_INSTANCE_NAME = code
+# environment
+SNAP_ARCH = amd64
+# makefile (from 'Makefile', line 1)
+MAKEFILE_LIST :=  Makefile
+# environment
+JAVA_HOME = /usr/lib/jvm/java-11-openjdk-amd64/bin/
+# automatic
+@F = $(notdir $@)
+# environment
+GIO_LAUNCHED_DESKTOP_FILE = /var/lib/snapd/desktop/applications/code_code.desktop
+# environment
+USERNAME = atero
+# environment
+MAKELEVEL := 0
+# environment
+XDG_DATA_DIRS = /usr/share/ubuntu:/home/atero/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# environment
+_ = /snap/code/96/usr/share/code/code
+# environment
+MANAGERPID = 2673
+# environment
+LESSOPEN = | /usr/bin/lesspipe %s
+# environment
+LC_NAME = en_GB.UTF-8
+# environment
+VSCODE_CWD = /home/atero
+# environment
+GOPROXY = https://proxy.golang.org,direct
+# environment
+GSETTINGS_SCHEMA_DIR = /snap/code/96/usr/share/glib-2.0/schemas
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# environment
+PATH = /usr/local/go/bin:/home/atero/.npm-global/bin:/home/atero/.local/bin:/home/atero/.nvm/versions/node/v17.9.0/bin:/home/atero/.config/composer/vendor/bin:/home/atero/.npm-global/bin:/home/atero/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/atero/Coding/GoLangThings/bin:/home/atero/Coding/GoLangThings/bin:/home/atero/Coding/GoLangThings/bin:/home/atero/Coding/GoLangThings/bin
+# environment
+GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
+# environment
+SESSION_MANAGER = local/rogKEATER:@/tmp/.ICE-unix/2889,unix/rogKEATER:/tmp/.ICE-unix/2889
+# environment
+XDG_RUNTIME_DIR = /run/user/1000
+# environment
+GDK_PIXBUF_MODULE_FILE = /home/atero/snap/code/common/.cache/gdk-pixbuf-loaders.cache
+# environment
+SNAP = /snap/code/96
+# environment
+GOPATH = /home/atero/Coding/GoLangThings
+# environment
+NVM_BIN = /home/atero/.nvm/versions/node/v17.9.0/bin
+# environment
+SNAP_VERSION = da15b6fd
+# environment
+XDG_MENU_PREFIX = gnome-
+# environment
+VSCODE_LOG_STACK = false
+# environment
+DISABLE_WAYLAND = 1
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+INVOCATION_ID = 37179c7158984d67b472e2f11568cd15
+# environment
+GDK_PIXBUF_MODULEDIR = /snap/code/96/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
+# environment
+LS_COLORS = 
+# environment
+XDG_SESSION_DESKTOP = ubuntu
+# environment
+SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
+# environment
+GIO_LAUNCHED_DESKTOP_FILE_PID = 4665
+# automatic
+%F = $(notdir $%)
+# environment
+DISPLAY = :0
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+SNAP_INSTANCE_KEY = 
+# environment
+PWD = /home/atero/Documents/PD/Code/GoThings/SimplySacco
+# default
+.LOADED := 
+# environment
+SSH_AGENT_PID = 2852
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
+# environment
+GTK_MODULES = gail:atk-bridge
+# environment
+GOMODCACHE = /home/atero/Coding/GoLangThings/pkg/mod
+# environment
+HOME = /home/atero
+# environment
+LESSCLOSE = /usr/bin/lesspipe %s %s
+# environment
+VSCODE_CLI = 1
+# environment
+VSCODE_CODE_CACHE_PATH = /home/atero/.config/Code/CachedData/da15b6fd3ef856477bf6f4fb29ba1b7af717770d
+# environment
+LOGNAME = atero
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# environment
+SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd/void
+# environment
+SNAP_CONTEXT = rTLsXGXSfRq1WKnPTH0CgXtx7RJtlbK7R36C0jsQxTs2
+# environment
+NVM_CD_FLAGS = 
+# automatic
++F = $(notdir $+)
+# environment
+ELECTRON_NO_ATTACH_CONSOLE = 1
+# environment
+SNAP_USER_COMMON = /home/atero/snap/code/common
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# environment
+GNOME_DESKTOP_SESSION_ID = this-is-deprecated
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+LC_TIME = en_GB.UTF-8
+# environment
+ 
+SNAP_REAL_HOME = /home/atero
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
+# environment
+QT_IM_MODULE = ibus
+# environment
+SNAP_USER_DATA = /home/atero/snap/code/96
+# environment
+SHLVL = 0
+# environment
+GNOME_SHELL_SESSION_MODE = ubuntu
+# environment
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-728d6490-2bc7-4e4a-8faf-716775ac8770.sock
+# default
+MAKE_VERSION := 4.2.1
+# environment
+USER = atero
+# environment
+SNAP_REVISION = 96
+# environment
+LC_MONETARY = en_GB.UTF-8
+# makefile
+.DEFAULT_GOAL := say_hello
+# environment
+XDG_CURRENT_DESKTOP = Unity
+# environment
+GOROOT = /usr/local/go
+# environment
+LIBVIRT_DEFAULT_URI = qemu:///system
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# environment
+LC_TELEPHONE = en_GB.UTF-8
+# default
+MAKE_COMMAND := make
+# default
+.VARIABLES := 
+# automatic
+*F = $(notdir $*)
+# environment
+LANGUAGE = en_GB:en
+# environment
+VSCODE_IPC_HOOK = /run/user/1000/vscode-c477b529-1.67.1-main.sock
+# environment
+BAMF_DESKTOP_FILE_HINT = /var/lib/snapd/desktop/applications/code_code.desktop
+# makefile
+MAKEFLAGS = pqrR
+# environment
+MFLAGS = -pqrR
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+NVM_DIR = /home/atero/.nvm
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# environment
+GDK_BACKEND = x11
+# environment
+LC_PAPER = en_GB.UTF-8
+# environment
+LC_IDENTIFICATION = en_GB.UTF-8
+# environment
+QT_ACCESSIBILITY = 1
+# default
+MAKEFILES := 
+# environment
+SNAP_COOKIE = rTLsXGXSfRq1WKnPTH0CgXtx7RJtlbK7R36C0jsQxTs2
+# environment
+LC_NUMERIC = en_GB.UTF-8
+# automatic
+<F = $(notdir $<)
+# environment
+LC_MEASUREMENT = en_GB.UTF-8
+# environment
+SNAP_NAME = code
+# environment
+LC_ALL = C
+# environment
+GJS_DEBUG_TOPICS = JS ERROR;JS LOG
+# automatic
+^F = $(notdir $^)
+# default
+SUFFIXES := 
+# environment
+SNAP_REEXEC = 
+# environment
+CHROME_DESKTOP = code-url-handler.desktop
+# environment
+WINDOWPATH = 2
+# default
+.INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+# environment
+GJS_DEBUG_OUTPUT = stderr
+# default
+.RECIPEPREFIX := 
+# environment
+LC_ADDRESS = en_GB.UTF-8
+# environment
+LANG = C
+# environment
+ 
+VSCODE_PID = 4711
+# variable set hash-table stats:
+# Load=141/1024=14%, Rehash=0, Collisions=25/166=15%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 2049, inode 16261145): 7 files, no impossibilities.
+
+# 7 files, no impossibilities in 1 directories.
+
+# Implicit Rules
+
+# No implicit rules.
+
+# Files
+
+create_migrations:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 20):
+	migrate create -ext sql -dir db/migrations -seq init_schema
+
+# Not a target:
+all:
+#  Command line target.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has not been updated.
+
+.PHONY: say_hello docker_pull_postgres postgres_init postgres_shell_login createdb dropdb create_migrations run_migrations_up run_migrations_down sqlc
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+postgres_shell_login:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 11):
+	docker exec -it postgres14 psql -U root
+
+sqlc:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 29):
+	sqlc generate
+
+postgres_init:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 8):
+	docker run --name postgres14 -p 5432:5432 -e POSTGRES_USER=root -e POSTGRES_PASSWORD=secret -d postgres:14.2-alpine
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+ 
+#  Last modified 2022-05-12 11:18:21.921545736
+#  File has been updated.
+#  Successfully updated.
+
+docker_pull_postgres:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 5):
+	docker pull postgres:14.2-alpine
+
+createdb:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 14):
+	docker exec -it postgres14 createdb --username=root --owner=root simply_sacco
+
+run_migrations_up:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 23):
+	migrate -path db/migrations -database "postgresql://root:secret@localhost:5432/simply_sacco?sslmode=disable" -verbose up
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+run_migrations_down:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 26):
+	migrate -path db/migrations -database "postgresql://root:secret@localhost:5432/simply_sacco?sslmode=disable" -verbose down
+
+dropdb:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 17):
+	docker exec -it postgres14 dropdb simply_sacco
+
+say_hello:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 2):
+	echo "Hello World"
+
+# files hash-table stats:
+# Load=15/1024=1%, Rehash=0, Collisions=0/35=0%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 23 / storage = 247 B / avg = 10 B
+# current buf: size = 8162 B / used = 247 B / count = 23 / avg = 10 B
+
+# strcache performance: lookups = 48 / hit rate = 52%
+ 
+# hash-table stats:
+# Load=23/8192=0%, Rehash=0, Collisions=1/48=2%
+# Finished Make data base on Thu May 12 13:38:56 2022
+
+ 

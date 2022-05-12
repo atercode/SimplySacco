@@ -1,0 +1,4 @@
+DROP TABLE IF EXISTS contributions;
+DROP TABLE IF EXISTS deposits;
+DROP TABLE IF EXISTS members;
+DROP TABLE IF EXISTS statuses;
