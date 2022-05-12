@@ -31,4 +31,7 @@ sqlc:
 run_unit_tests:
 	go test -v -cover ./...
 
-.PHONY: say_hello docker_pull_postgres postgres_init postgres_shell_login createdb dropdb create_migrations run_migrations_up run_migrations_down sqlc run_unit_tests
+server:
+	go run main.go
+
+.PHONY: say_hello docker_pull_postgres postgres_init postgres_shell_login createdb dropdb create_migrations run_migrations_up run_migrations_down sqlc run_unit_tests server
