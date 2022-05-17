@@ -6,18 +6,18 @@ import (
 	"os"
 	"testing"
 
+	"github.com/atercode/SimplySacco/utils"
 	_ "github.com/lib/pq"
 )
 
 var testQueries *Queries
 
-const (
-	dbDriver       = "postgres"
-	dbSourceString = "postgresql://root:secret@localhost:5432/simply_sacco?sslmode=disable"
-)
-
 func TestMain(m *testing.M) {
-	conn, err := sql.Open(dbDriver, dbSourceString)
+	config, err := utils.LoadConfig("../..")
+	if err != nil {
+		log.Fatal("Cannot load configs: ", err)
+	}
+	conn, err := sql.Open(config.DBDriver, config.DBSourceSting)
 	if err != nil {
 		log.Fatal("Cannot connect to db: ", err)
 	}

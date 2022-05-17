@@ -6,6 +6,7 @@ package db
 
 import (
 	"database/sql"
+	"time"
 )
 
 type Contribution struct {
@@ -29,11 +30,13 @@ type Deposit struct {
 }
 
 type Member struct {
-	ID         int32        `json:"id"`
-	FullName   string       `json:"full_name"`
-	Email      string       `json:"email"`
-	CreatedAt  sql.NullTime `json:"created_at"`
-	StatusCode string       `json:"status_code"`
+	ID                int32        `json:"id"`
+	FullName          string       `json:"full_name"`
+	Email             string       `json:"email"`
+	HashedPassword    string       `json:"hashed_password"`
+	PasswordChangedAt time.Time    `json:"password_changed_at"`
+	CreatedAt         sql.NullTime `json:"created_at"`
+	StatusCode        string       `json:"status_code"`
 }
 
 type Status struct {

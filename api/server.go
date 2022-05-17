@@ -1,26 +1,48 @@
 package api
 
 import (
+	"fmt"
+
 	db "github.com/atercode/SimplySacco/db/sqlc"
+	"github.com/atercode/SimplySacco/token"
+	"github.com/atercode/SimplySacco/utils"
 	"github.com/gin-gonic/gin"
 )
 
 type Server struct {
-	store  db.Store
-	router *gin.Engine
+	config     utils.Config
+	store      db.Store
+	tokenMaker token.Maker
+	router     *gin.Engine
 }
 
-func NewServer(store db.Store) *Server {
-	server := &Server{store: store}
+func NewServer(config utils.Config, store db.Store) (*Server, error) {
+	tokenMaker, err := token.NewPasetoMaker(config.TokenSymmetricKey)
+	if err != nil {
+		return nil, fmt.Errorf("Cannot create a token maker: %w", err)
+	}
+	server := &Server{
+		config:     config,
+		store:      store,
+		tokenMaker: tokenMaker,
+	}
+
+	server.setupRouter()
+	return server, nil
+}
+
+func (server *Server) setupRouter() {
 	router := gin.Default()
 
-	router.GET("/members", server.listMembers)
-	router.POST("/members", server.createMember)
-	router.GET("/members/:id", server.getMember)
+	router.POST("/login", server.loginMember)
+
+	authRoutes := router.Group("/").Use(authMiddleware(server.tokenMaker))
+
+	authRoutes.GET("/members", server.listMembers)
+	authRoutes.POST("/members", server.createMember)
+	authRoutes.GET("/members/:id", server.getMember)
 
 	server.router = router
-
-	return server
 }
 
 //Http server start and graceful shutdown logic

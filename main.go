@@ -6,27 +6,29 @@ import (
 
 	"github.com/atercode/SimplySacco/api"
 	db "github.com/atercode/SimplySacco/db/sqlc"
+	"github.com/atercode/SimplySacco/utils"
 
 	_ "github.com/lib/pq"
 )
 
-const (
-	dbDriver       = "postgres"
-	dbSourceString = "postgresql://root:secret@localhost:5432/simply_sacco?sslmode=disable"
-	serverAddress  = "localhost:8080"
-)
-
 func main() {
+	config, err := utils.LoadConfig(".")
+	if err != nil {
+		log.Fatal("Cannot load configs: ", err)
+	}
 
-	conn, err := sql.Open(dbDriver, dbSourceString)
+	conn, err := sql.Open(config.DBDriver, config.DBSourceSting)
 	if err != nil {
 		log.Fatal("Cannot connect to db: ", err)
 	}
 
 	store := db.NewStore(conn)
-	server := api.NewServer(store)
+	server, err := api.NewServer(config, store)
+	if err != nil {
+		log.Fatal("Cannot create server: ", err)
+	}
 
-	err = server.Start(serverAddress)
+	err = server.Start(config.ServerAddress)
 	if err != nil {
 		log.Fatal("Cannot start server: ", err)
 	}

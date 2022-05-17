@@ -20,9 +20,9 @@ OFFSET $2;
 
 -- name: CreateMember :one
 INSERT INTO members (
-  full_name, email, status_code
+  full_name, email, hashed_password, status_code
 ) VALUES (
-  $1, $2, $3
+  $1, $2, $3, $4
 )
 RETURNING *;
 

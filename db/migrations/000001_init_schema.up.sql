@@ -4,16 +4,12 @@ CREATE TABLE "statuses" (
   "created_at" timestamp DEFAULT (now())
 );
 
-INSERT INTO "statuses" (
-  "code", "name"
-) VALUES (
-  'TEST', 'Test Status'
-);
-
 CREATE TABLE "members" (
   "id" SERIAL PRIMARY KEY,
   "full_name" varchar NOT NULL,
-  "email" varchar NOT NULL,
+  "email" varchar UNIQUE NOT NULL,
+  "hashed_password" varchar NOT NULL,
+  "password_changed_at" timestamp NOT NULL DEFAULT (now()),
   "created_at" timestamp DEFAULT (now()),
   "status_code" varchar NOT NULL
 );

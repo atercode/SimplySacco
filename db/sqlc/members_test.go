@@ -6,15 +6,20 @@ import (
 	"testing"
 	"time"
 
+	"github.com/atercode/SimplySacco/utils"
 	"github.com/brianvoe/gofakeit/v6"
 	"github.com/stretchr/testify/require"
 )
 
 func createRandomMember(t *testing.T) Member {
+	hashedPassword, err := utils.HashPassword(gofakeit.DigitN(8))
+	require.NoError(t, err)
+
 	args := CreateMemberParams{
-		FullName:   gofakeit.Name(),
-		Email:      gofakeit.Email(),
-		StatusCode: "TEST",
+		FullName:       gofakeit.Name(),
+		Email:          gofakeit.Email(),
+		StatusCode:     "TEST",
+		HashedPassword: hashedPassword,
 	}
 
 	member, err := testQueries.CreateMember(context.Background(), args)

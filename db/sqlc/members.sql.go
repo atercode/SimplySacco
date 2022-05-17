@@ -11,26 +11,34 @@ import (
 
 const createMember = `-- name: CreateMember :one
 INSERT INTO members (
-  full_name, email, status_code
+  full_name, email, hashed_password, status_code
 ) VALUES (
-  $1, $2, $3
+  $1, $2, $3, $4
 )
-RETURNING id, full_name, email, created_at, status_code
+RETURNING id, full_name, email, hashed_password, password_changed_at, created_at, status_code
 `
 
 type CreateMemberParams struct {
-	FullName   string `json:"full_name"`
-	Email      string `json:"email"`
-	StatusCode string `json:"status_code"`
+	FullName       string `json:"full_name"`
+	Email          string `json:"email"`
+	HashedPassword string `json:"hashed_password"`
+	StatusCode     string `json:"status_code"`
 }
 
 func (q *Queries) CreateMember(ctx context.Context, arg CreateMemberParams) (Member, error) {
-	row := q.db.QueryRowContext(ctx, createMember, arg.FullName, arg.Email, arg.StatusCode)
+	row := q.db.QueryRowContext(ctx, createMember,
+		arg.FullName,
+		arg.Email,
+		arg.HashedPassword,
+		arg.StatusCode,
+	)
 	var i Member
 	err := row.Scan(
 		&i.ID,
 		&i.FullName,
 		&i.Email,
+		&i.HashedPassword,
+		&i.PasswordChangedAt,
 		&i.CreatedAt,
 		&i.StatusCode,
 	)
@@ -48,7 +56,7 @@ func (q *Queries) DeleteMember(ctx context.Context, id int32) error {
 }
 
 const getMember = `-- name: GetMember :one
-SELECT id, full_name, email, created_at, status_code FROM members
+SELECT id, full_name, email, hashed_password, password_changed_at, created_at, status_code FROM members
 WHERE id = $1 
 LIMIT 1
 `
@@ -60,6 +68,8 @@ func (q *Queries) GetMember(ctx context.Context, id int32) (Member, error) {
 		&i.ID,
 		&i.FullName,
 		&i.Email,
+		&i.HashedPassword,
+		&i.PasswordChangedAt,
 		&i.CreatedAt,
 		&i.StatusCode,
 	)
@@ -67,7 +77,7 @@ func (q *Queries) GetMember(ctx context.Context, id int32) (Member, error) {
 }
 
 const getMemberByEmail = `-- name: GetMemberByEmail :one
-SELECT id, full_name, email, created_at, status_code FROM members
+SELECT id, full_name, email, hashed_password, password_changed_at, created_at, status_code FROM members
 WHERE email = $1 
 LIMIT 1
 `
@@ -79,6 +89,8 @@ func (q *Queries) GetMemberByEmail(ctx context.Context, email string) (Member, e
 		&i.ID,
 		&i.FullName,
 		&i.Email,
+		&i.HashedPassword,
+		&i.PasswordChangedAt,
 		&i.CreatedAt,
 		&i.StatusCode,
 	)
@@ -86,7 +98,7 @@ func (q *Queries) GetMemberByEmail(ctx context.Context, email string) (Member, e
 }
 
 const listMembers = `-- name: ListMembers :many
-SELECT id, full_name, email, created_at, status_code FROM members
+SELECT id, full_name, email, hashed_password, password_changed_at, created_at, status_code FROM members
 ORDER BY created_at
 `
 
@@ -103,6 +115,8 @@ func (q *Queries) ListMembers(ctx context.Context) ([]Member, error) {
 			&i.ID,
 			&i.FullName,
 			&i.Email,
+			&i.HashedPassword,
+			&i.PasswordChangedAt,
 			&i.CreatedAt,
 			&i.StatusCode,
 		); err != nil {
@@ -120,7 +134,7 @@ func (q *Queries) ListMembers(ctx context.Context) ([]Member, error) {
 }
 
 const listMembersPaginated = `-- name: ListMembersPaginated :many
-SELECT id, full_name, email, created_at, status_code FROM members
+SELECT id, full_name, email, hashed_password, password_changed_at, created_at, status_code FROM members
 ORDER BY created_at
 LIMIT $1
 OFFSET $2
@@ -144,6 +158,8 @@ func (q *Queries) ListMembersPaginated(ctx context.Context, arg ListMembersPagin
 			&i.ID,
 			&i.FullName,
 			&i.Email,
+			&i.HashedPassword,
+			&i.PasswordChangedAt,
 			&i.CreatedAt,
 			&i.StatusCode,
 		); err != nil {
@@ -164,7 +180,7 @@ const updateMember = `-- name: UpdateMember :one
 UPDATE members 
 SET full_name = $2, email = $3, status_code = $4
 WHERE id=$1
-RETURNING id, full_name, email, created_at, status_code
+RETURNING id, full_name, email, hashed_password, password_changed_at, created_at, status_code
 `
 
 type UpdateMemberParams struct {
@@ -186,6 +202,8 @@ func (q *Queries) UpdateMember(ctx context.Context, arg UpdateMemberParams) (Mem
 		&i.ID,
 		&i.FullName,
 		&i.Email,
+		&i.HashedPassword,
+		&i.PasswordChangedAt,
 		&i.CreatedAt,
 		&i.StatusCode,
 	)
@@ -196,7 +214,7 @@ const updateMemberStaus = `-- name: UpdateMemberStaus :one
 UPDATE members 
 SET status_code = $2
 WHERE id=$1
-RETURNING id, full_name, email, created_at, status_code
+RETURNING id, full_name, email, hashed_password, password_changed_at, created_at, status_code
 `
 
 type UpdateMemberStausParams struct {
@@ -211,6 +229,8 @@ func (q *Queries) UpdateMemberStaus(ctx context.Context, arg UpdateMemberStausPa
 		&i.ID,
 		&i.FullName,
 		&i.Email,
+		&i.HashedPassword,
+		&i.PasswordChangedAt,
 		&i.CreatedAt,
 		&i.StatusCode,
 	)
